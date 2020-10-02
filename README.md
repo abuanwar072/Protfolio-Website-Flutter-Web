@@ -10,4 +10,5 @@ A nice clean Portfolio Website for Designer or developer. Which includes almost 
 ### Protfolio Website Final UI
 
 ![App UI](/intro.gif)
-![App UI](/Portfolio.png)
+<br>
+<img src="/Portfolio.png" alt="portfolio" width="600">
