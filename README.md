@@ -1,4 +1,4 @@
-# A Protfolio Website - Flutter Web
+# A Portfolio Website - Flutter Web
 
 ## [Watch it on YouTube](https://youtu.be/Y4oJMiEwlBg)
 
