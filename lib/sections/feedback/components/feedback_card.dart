@@ -5,8 +5,8 @@ import '../../../constants.dart';
 
 class FeedbackCard extends StatefulWidget {
   const FeedbackCard({
-    Key key,
-    this.index,
+    Key? key,
+    required this.index,
   }) : super(key: key);
 
   final int index;

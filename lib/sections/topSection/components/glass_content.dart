@@ -6,8 +6,8 @@ import '../../../constants.dart';
 
 class GlassContent extends StatelessWidget {
   const GlassContent({
-    Key key,
-    @required this.size,
+    Key? key,
+    required this.size,
   }) : super(key: key);
 
   final Size size;
@@ -32,7 +32,7 @@ class GlassContent extends StatelessWidget {
                 "Hello There!",
                 style: Theme.of(context)
                     .textTheme
-                    .headline5
+                    .headlineSmall!
                     .copyWith(color: Colors.white),
               ),
               Text(
@@ -48,7 +48,7 @@ class GlassContent extends StatelessWidget {
                 "Creative Design Director",
                 style: Theme.of(context)
                     .textTheme
-                    .headline5
+                    .headlineSmall!
                     .copyWith(color: Colors.white),
               )
             ],

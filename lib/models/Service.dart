@@ -5,7 +5,7 @@ class Service {
   final String title, image;
   final Color color;
 
-  Service({this.id, this.title, this.image, this.color});
+  Service({required this.id, required this.title, required this.image, required this.color});
 }
 
 // For demo list of service

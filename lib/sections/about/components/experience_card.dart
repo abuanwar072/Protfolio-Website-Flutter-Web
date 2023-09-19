@@ -4,8 +4,8 @@ import '../../../constants.dart';
 
 class ExperienceCard extends StatelessWidget {
   const ExperienceCard({
-    Key key,
-    this.numOfExp,
+    Key? key,
+    required this.numOfExp,
   }) : super(key: key);
 
   final String numOfExp;
