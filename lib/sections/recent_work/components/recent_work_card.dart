@@ -6,13 +6,13 @@ import '../../../constants.dart';
 class RecentWorkCard extends StatefulWidget {
   // just press "Command + ."
   const RecentWorkCard({
-    Key key,
-    this.index,
-    this.press,
+    Key? key,
+    required this.index,
+    required this.press,
   }) : super(key: key);
 
   final int index;
-  final Function press;
+  final Function()? press;
 
   @override
   _RecentWorkCardState createState() => _RecentWorkCardState();
@@ -54,7 +54,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                       recentWorks[widget.index].title,
                       style: Theme.of(context)
                           .textTheme
-                          .headline5
+                          .headlineSmall!
                           .copyWith(height: 1.5),
                     ),
                     SizedBox(height: kDefaultPadding),

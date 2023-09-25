@@ -4,7 +4,7 @@ import '../../../constants.dart';
 
 class AboutTextWithSign extends StatelessWidget {
   const AboutTextWithSign({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class AboutTextWithSign extends StatelessWidget {
           "About \nmy story",
           style: Theme.of(context)
               .textTheme
-              .headline2
+              .displayMedium!
               .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         SizedBox(height: kDefaultPadding * 2),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PersonPic extends StatelessWidget {
   const PersonPic({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

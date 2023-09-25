@@ -4,8 +4,8 @@ import 'glass_content.dart';
 
 class LogoAndBlurBox extends StatelessWidget {
   const LogoAndBlurBox({
-    Key key,
-    @required this.size,
+    Key? key,
+    required this.size,
   }) : super(key: key);
 
   final Size size;

@@ -36,7 +36,7 @@ class ContactSection extends StatelessWidget {
 
 class ContactBox extends StatelessWidget {
   const ContactBox({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -87,7 +87,7 @@ class ContactBox extends StatelessWidget {
 
 class ContactForm extends StatelessWidget {
   const ContactForm({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
