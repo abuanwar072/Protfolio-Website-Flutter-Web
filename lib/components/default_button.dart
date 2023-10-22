@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 
-class DefaultButton extends StatelessWidget {
-  const DefaultButton({
+class DefaultButton extends GetResponsiveView {
+  DefaultButton({
     Key? key,
     required this.imageSrc,
     required this.text,
@@ -14,7 +15,7 @@ class DefaultButton extends StatelessWidget {
   final Function()? press;
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder() {
     return TextButton(
       style: TextButton.styleFrom(
         foregroundColor: Color(0xFFE8F0F9),
@@ -25,16 +26,27 @@ class DefaultButton extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       ),
       onPressed: press,
-      child: Row(
-        children: [
-          Image.asset(imageSrc, height: 40),
-          SizedBox(width: kDefaultPadding),
-          Text(
-            text,
-            style: TextStyle(color: Colors.blue),
-          ),
-        ],
-      ),
+      child: screen.isPhone
+          ? Column(
+              children: [
+                Image.asset(imageSrc, height: 40),
+                SizedBox(width: kDefaultPadding),
+                Text(
+                  text,
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                Image.asset(imageSrc, height: 40),
+                SizedBox(width: kDefaultPadding),
+                Text(
+                  text,
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ],
+            ),
     );
   }
 }

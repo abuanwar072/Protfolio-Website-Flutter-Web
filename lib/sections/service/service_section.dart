@@ -30,7 +30,7 @@ class ServiceSection extends GetResponsiveView {
                   children: List.generate(
                       services.length,
                       (index) => SizedBox(
-                          height: Get.width * 0.5,
+                          height: Get.width * 0.7,
                           width: Get.width * 0.5,
                           child: ServiceCard(index: index))),
                 )

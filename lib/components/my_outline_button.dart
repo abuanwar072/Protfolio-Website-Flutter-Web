@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 
-class MyOutlineButton extends StatelessWidget {
-  const MyOutlineButton({
+class MyOutlineButton extends GetResponsiveView {
+  MyOutlineButton({
     Key? key,
     required this.imageSrc,
     required this.text,
@@ -14,7 +15,7 @@ class MyOutlineButton extends StatelessWidget {
   final Function()? press;
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder() {
     return FittedBox(
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
@@ -23,21 +24,32 @@ class MyOutlineButton extends StatelessWidget {
             horizontal: kDefaultPadding * 2.5,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(12),
           ),
           // borderSide: BorderSide(color: Color(0xFFEDEDED)),
         ),
         onPressed: press,
-        child: Row(
-          children: [
-            Image.asset(
-              imageSrc,
-              height: 40,
-            ),
-            SizedBox(width: kDefaultPadding),
-            Text(text)
-          ],
-        ),
+        child: screen.isPhone
+            ? Column(
+                children: [
+                  Image.asset(
+                    imageSrc,
+                    height: 40,
+                  ),
+                  SizedBox(width: kDefaultPadding),
+                  Text(text)
+                ],
+              )
+            : Row(
+                children: [
+                  Image.asset(
+                    imageSrc,
+                    height: 40,
+                  ),
+                  SizedBox(width: kDefaultPadding),
+                  Text(text)
+                ],
+              ),
       ),
     );
   }

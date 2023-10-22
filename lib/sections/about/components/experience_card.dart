@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../constants.dart';
 
-class ExperienceCard extends StatelessWidget {
-  const ExperienceCard({
+class ExperienceCard extends GetResponsiveView {
+  ExperienceCard({
     Key? key,
     required this.numOfExp,
   }) : super(key: key);
@@ -11,7 +12,7 @@ class ExperienceCard extends StatelessWidget {
   final String numOfExp;
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),
@@ -41,7 +42,7 @@ class ExperienceCard extends StatelessWidget {
                 Text(
                   numOfExp,
                   style: TextStyle(
-                    fontSize: 100,
+                    fontSize: screen.isPhone ? 20 : 60,
                     fontWeight: FontWeight.bold,
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
@@ -60,7 +61,7 @@ class ExperienceCard extends StatelessWidget {
                   numOfExp,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 100,
+                    fontSize: screen.isPhone ? 60 : 100,
                     color: Colors.white,
                   ),
                 )

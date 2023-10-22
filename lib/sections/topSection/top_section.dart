@@ -15,7 +15,7 @@ class TopSection extends GetResponsiveView {
     return Container(
         alignment: Alignment.center,
         constraints: BoxConstraints(
-            maxHeight: screen.isDesktop ? 900 : Get.height, minHeight: 700),
+            maxHeight: screen.isDesktop ? 900 : Get.height, minHeight: 500),
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(

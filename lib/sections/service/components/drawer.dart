@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:web_app/constants/menus.dart';
 
 Drawer customDrawer = Drawer(
-  backgroundColor: Color.fromARGB(255, 15, 49, 98),
+  backgroundColor: Colors.white60,
   child: ListView.builder(
       itemCount: menuItems.length,
       itemBuilder: (context, index) {
@@ -30,7 +30,7 @@ Drawer customDrawer = Drawer(
                     flex: 1,
                     child: Icon(
                       menuIcons[index],
-                      color: Colors.blue.shade800,
+                      color: Colors.blue.shade200,
                     ),
                   ),
                   Expanded(

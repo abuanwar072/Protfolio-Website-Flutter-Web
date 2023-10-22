@@ -48,7 +48,7 @@ class SectionTitle extends GetResponsiveView {
                 style: screen.isDesktop
                     ? Theme.of(Get.context!).textTheme.displayMedium!.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.black)
-                    : Theme.of(Get.context!).textTheme.displaySmall!.copyWith(
+                    : Theme.of(Get.context!).textTheme.titleLarge!.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.black),
               )
             ],

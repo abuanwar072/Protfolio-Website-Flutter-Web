@@ -71,21 +71,24 @@ class AboutSection extends GetResponsiveView {
                   ],
                 ),
           SizedBox(height: kDefaultPadding * 3),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MyOutlineButton(
-                imageSrc: "assets/images/hand.png",
-                text: "Hire Me!",
-                press: () {},
-              ),
-              SizedBox(width: kDefaultPadding * 1.5),
-              DefaultButton(
-                imageSrc: "assets/images/download.png",
-                text: "Download CV",
-                press: () {},
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MyOutlineButton(
+                  imageSrc: "assets/images/hand.png",
+                  text: "Hire Me!",
+                  press: () {},
+                ),
+                DefaultButton(
+                  imageSrc: "assets/images/download.png",
+                  text: "Download CV",
+                  press: () {},
+                ),
+              ],
+            ),
           ),
         ],
       ),

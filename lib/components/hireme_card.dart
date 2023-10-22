@@ -59,10 +59,14 @@ class HireMeDesktop extends StatelessWidget {
             )
           ],
         ),
-        DefaultButton(
-          text: "Hire Me!",
-          imageSrc: "assets/images/hand.png",
-          press: () {},
+        Expanded(child: Container()),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: DefaultButton(
+            text: "Hire Me!",
+            imageSrc: "assets/images/hand.png",
+            press: () {},
+          ),
         )
       ],
     );
@@ -76,7 +80,7 @@ class HireMeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: Get.width,
-      height: 100,
+      height: 140,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,10 +104,8 @@ class HireMeMobile extends StatelessWidget {
                     children: [
                       Text(
                         "Starting New Project?",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: kDefaultPadding / 2),
                       Text(
                         "Get an estimate for the new project",
                         style: TextStyle(fontWeight: FontWeight.w200),
@@ -112,26 +114,13 @@ class HireMeMobile extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                flex: 0,
-                child: DefaultButton(
-                  text: "Hire Me!",
-                  imageSrc: "assets/images/hand.png",
-                  press: () {},
-                ),
-              ),
             ],
           ),
-          // SizedBox(
-          //   height: 20,
-          // ),
-          // Row(
-          //   children: [
-          //     Expanded(child: Container()),
-
-          //     Expanded(child: Container()),
-          //   ],
-          // )
+          DefaultButton(
+            text: "Hire Me!",
+            imageSrc: "assets/images/hand.png",
+            press: () {},
+          ),
         ],
       ),
     );

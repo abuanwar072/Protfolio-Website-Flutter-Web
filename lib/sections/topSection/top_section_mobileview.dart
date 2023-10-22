@@ -20,7 +20,7 @@ class TopSectionMobile extends GetResponsiveView {
           right: 0,
           bottom: 0,
           child: Container(
-            height: Get.height * 0.6,
+            height: Get.height * 0.5,
             child: PersonPic(),
           ),
         ),
