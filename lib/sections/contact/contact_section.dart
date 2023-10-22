@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:web_app/components/default_button.dart';
 import 'package:web_app/components/section_title.dart';
 import 'package:web_app/constants.dart';
@@ -34,13 +35,13 @@ class ContactSection extends StatelessWidget {
   }
 }
 
-class ContactBox extends StatelessWidget {
-  const ContactBox({
+class ContactBox extends GetResponsiveView {
+  ContactBox({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder() {
     return Container(
       constraints: BoxConstraints(maxWidth: 1110),
       margin: EdgeInsets.only(top: kDefaultPadding * 2),
@@ -54,29 +55,56 @@ class ContactBox extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SocalCard(
-                color: Color(0xFFD9FFFC),
-                iconSrc: "assets/images/skype.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
-              SocalCard(
-                color: Color(0xFFE4FFC7),
-                iconSrc: "assets/images/whatsapp.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
-              SocalCard(
-                color: Color(0xFFE8F0F9),
-                iconSrc: "assets/images/messanger.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
-            ],
-          ),
+          screen.isDesktop
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SocalCard(
+                      color: Color(0xFFD9FFFC),
+                      iconSrc: "assets/images/skype.png",
+                      name: 'TheFlutterWay',
+                      press: () {},
+                    ),
+                    SocalCard(
+                      color: Color(0xFFE4FFC7),
+                      iconSrc: "assets/images/whatsapp.png",
+                      name: 'TheFlutterWay',
+                      press: () {},
+                    ),
+                    SocalCard(
+                      color: Color(0xFFE8F0F9),
+                      iconSrc: "assets/images/messanger.png",
+                      name: 'TheFlutterWay',
+                      press: () {},
+                    ),
+                  ],
+                )
+              : SizedBox(
+                  height: 100,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      SocalCard(
+                        color: Color(0xFFD9FFFC),
+                        iconSrc: "assets/images/skype.png",
+                        name: 'TheFlutterWay',
+                        press: () {},
+                      ),
+                      SocalCard(
+                        color: Color(0xFFE4FFC7),
+                        iconSrc: "assets/images/whatsapp.png",
+                        name: 'TheFlutterWay',
+                        press: () {},
+                      ),
+                      SocalCard(
+                        color: Color(0xFFE8F0F9),
+                        iconSrc: "assets/images/messanger.png",
+                        name: 'TheFlutterWay',
+                        press: () {},
+                      ),
+                    ],
+                  ),
+                ),
           SizedBox(height: kDefaultPadding * 2),
           ContactForm(),
         ],

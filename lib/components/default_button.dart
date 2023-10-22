@@ -29,7 +29,10 @@ class DefaultButton extends StatelessWidget {
         children: [
           Image.asset(imageSrc, height: 40),
           SizedBox(width: kDefaultPadding),
-          Text(text),
+          Text(
+            text,
+            style: TextStyle(color: Colors.blue),
+          ),
         ],
       ),
     );
