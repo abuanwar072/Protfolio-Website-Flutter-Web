@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 
-class SectionTitle extends StatelessWidget {
-  const SectionTitle({
+class SectionTitle extends GetResponsiveView {
+  SectionTitle({
     Key? key,
     required this.title,
     required this.subTitle,
@@ -14,7 +15,7 @@ class SectionTitle extends StatelessWidget {
   final Color color;
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder() {
     return Container(
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
       constraints: BoxConstraints(maxWidth: 1110),
@@ -44,10 +45,11 @@ class SectionTitle extends StatelessWidget {
               ),
               Text(
                 title,
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                style: screen.isDesktop
+                    ? Theme.of(Get.context!).textTheme.displayMedium!.copyWith(
+                        fontWeight: FontWeight.bold, color: Colors.black)
+                    : Theme.of(Get.context!).textTheme.titleLarge!.copyWith(
+                        fontWeight: FontWeight.bold, color: Colors.black),
               )
             ],
           )

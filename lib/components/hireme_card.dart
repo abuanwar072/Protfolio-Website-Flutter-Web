@@ -1,58 +1,126 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 import 'default_button.dart';
 
-class HireMeCard extends StatelessWidget {
-  const HireMeCard({
+class HireMeCard extends GetResponsiveView {
+  HireMeCard({
     Key? key,
   }) : super(key: key);
 
   @override
+  Widget builder() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+          padding: EdgeInsets.all(kDefaultPadding * 2),
+          // constraints: BoxConstraints(maxWidth: 1110),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [kDefaultShadow],
+          ),
+          child: screen.isDesktop ? HireMeDesktop() : HireMeMobile()),
+    );
+  }
+}
+
+class HireMeDesktop extends StatelessWidget {
+  const HireMeDesktop({super.key});
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(kDefaultPadding * 2),
-      constraints: BoxConstraints(maxWidth: 1110),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [kDefaultShadow],
-      ),
-      child: Row(
-        children: [
-          Image.asset(
-            "assets/images/email.png",
+    return Row(
+      children: [
+        Image.asset(
+          "assets/images/email.png",
+          height: 80,
+          width: 80,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: SizedBox(
             height: 80,
-            width: 80,
+            child: VerticalDivider(),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            child: SizedBox(
-              height: 80,
-              child: VerticalDivider(),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Starting New Project?",
+              style: TextStyle(fontSize: 42, fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: kDefaultPadding / 2),
+            Text(
+              "Get an estimate for the new project",
+              style: TextStyle(fontWeight: FontWeight.w200),
+            )
+          ],
+        ),
+        Expanded(child: Container()),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: DefaultButton(
+            text: "Hire Me!",
+            imageSrc: "assets/images/hand.png",
+            press: () {},
           ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Starting New Project?",
-                  style: TextStyle(fontSize: 42, fontWeight: FontWeight.bold),
+        )
+      ],
+    );
+  }
+}
+
+class HireMeMobile extends StatelessWidget {
+  const HireMeMobile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: Get.width,
+      height: 140,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 0,
+                child: Image.asset(
+                  "assets/images/email.png",
+                  height: 40,
+                  width: 40,
                 ),
-                SizedBox(height: kDefaultPadding / 2),
-                Text(
-                  "Get an estimate for the new project",
-                  style: TextStyle(fontWeight: FontWeight.w200),
-                )
-              ],
-            ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Starting New Project?",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Get an estimate for the new project",
+                        style: TextStyle(fontWeight: FontWeight.w200),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
           DefaultButton(
             text: "Hire Me!",
             imageSrc: "assets/images/hand.png",
             press: () {},
-          )
+          ),
         ],
       ),
     );

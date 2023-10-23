@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../../constants/menus.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -10,14 +11,7 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   int selectedIndex = 0;
   int hoverIndex = 0;
-  List<String> menuItems = [
-    "Home",
-    "Abour",
-    "Services",
-    "Portfolio",
-    "Testimonial",
-    "Contact"
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
